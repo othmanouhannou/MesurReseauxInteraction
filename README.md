@@ -1,3 +1,7 @@
+\usepackage{amsmath}
+\usepackage{mathtools}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.js" integrity="sha384-ImWHyYvDPlRzwFnvLhG9Jcpm/7qL4SVIuJK0C6Rj+Mf7fpeNJCLCynC+EVz4kCSA" crossorigin="anonymous"></script>
+
 # Reseaux d interaction
 
 Nous allons analyser un réseau de collaboration scientifique en informatique. Le réseau est extrait de DBLP et disponible sur SNAP.
@@ -36,11 +40,12 @@ ensuite nous allons lire les données à l'aide de la fonction `readAll()` qui s
 - degré moyen : 6.62208890914917
 - coefficient de clustering : 0.6324308280637396
 
-La probabilité p est définie comme p=$\frac {⟨k⟩}{N}$
+La probabilité p est définie comme p=$`\frac {⟨k⟩}{N}`$
 ⟨k⟩ est le degré moyen et N est le nombre de nœuds.
 
 En effet, le coefficient de clustering moyen dans un graphe aléatoire G(N,p) est la moyenne des coefficients de clustering de tous les nœuds ayant un degré supérieur ou égal à 2.
 
-Dans notre cas, la moyenne du coefficient de clustering pour un réseau aléatoire de la même taille et du même degré moyen p=$\frac {⟨k⟩}{N}$ est calculée comme suit :
-
-${C_{aleatoire}}$ <=> p=$\frac {⟨k⟩}{N}$ <=> $\frac {6.62208890914917}{317080}$ $\approx$ $2.0884 × 10 ^ {-5}$ 
+Dans notre cas, la moyenne du coefficient de clustering pour un réseau aléatoire de la même taille et du même degré moyen p=$`\frac {⟨k⟩}{N}`$ est calculée comme suit :
+ 
+ $`C_{aléatoire} <=> p = \frac{⟨k⟩}{N} <=> \frac{6.62208890914917}{317080} \approx 2.0884 × 10 ^ {-5} `$ 
+ 
