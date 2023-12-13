@@ -5,8 +5,11 @@ import org.graphstream.stream.file.FileSourceEdge;
 import java.io.IOException;
 
 public class Main {
+
+
+
     public static void main(String[] args) {
-        String filePath = "data/com-dblp.ungraph.txt";
+        String filePath = "src/data/com-dblp.ungraph.txt";
         Graph graph = new DefaultGraph("graph");
         FileSourceEdge fs = new FileSourceEdge();
         fs.addSink(graph);
@@ -23,5 +26,14 @@ public class Main {
         System.out.println("Nombre d'arcs : " + graph.getEdgeCount());
         System.out.println("Degree moyen : " + Toolkit.averageDegree(graph));
         System.out.println("coefficient de clustering : " + Toolkit.averageClusteringCoefficient(graph));
+        Boolean connexe = Toolkit.isConnected(graph);
+        //tester la connectivité du graphe
+        System.out.println("connected graph : " + connexe);
+        //un graph aleatoire peut etre connece ssi le degres moyen est supperieur au ln(nb neuds)
+        System.out.println(Math.log(graph.getNodeCount()) + " > " + Toolkit.averageDegree(graph));
+        Mesur m = new Mesur(graph);
+        m.generateDegreeDistribution();
+
         }
+
     }
