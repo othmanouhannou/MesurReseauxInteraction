@@ -1,10 +1,18 @@
 import org.graphstream.algorithm.Toolkit;
+import org.graphstream.graph.BreadthFirstIterator;
 import org.graphstream.graph.Graph;
+import org.graphstream.graph.Node;
 import org.graphstream.graph.implementations.DefaultGraph;
 import org.graphstream.stream.file.FileSourceEdge;
+
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
 
 public class Main {
+
+
 
 
 
@@ -34,6 +42,35 @@ public class Main {
         Mesur m = new Mesur(graph);
         m.generateDegreeDistribution();
 
+
+        //*******************************************
+        List<Node> randomNodes = Toolkit.randomNodeSet(graph, 1000);
+        BreadthFirstIterator bfsIterator = new BreadthFirstIterator(randomNodes.get(0));
+
+        while (bfsIterator.hasNext())
+            bfsIterator.next();
+
+        double totalDist = 0;
+        double[] distDistribution = new double[bfsIterator.getDepthMax() + 1];
+
+        for (Node node : randomNodes) {
+            if (bfsIterator.getDepthOf(node) != -1) {
+                totalDist += bfsIterator.getDepthOf(node);
+                distDistribution[bfsIterator.getDepthOf(node)]++;
+            }
         }
+
+        double avgDist = totalDist / 1000.0;
+        System.out.println("\nGraph Name: " + graph.getId());
+        System.out.println("Average Distance: " + avgDist);
+
+
+        double petitMonde = (Math.log(graph.getNodeCount())/Math.log(Toolkit.averageDegree(graph)));
+        System.out.println("ln(N)/ln(<k>) :" + petitMonde);
+
+
+        //*******************
+
+    }
 
     }
