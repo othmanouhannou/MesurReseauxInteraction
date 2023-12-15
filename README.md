@@ -1,4 +1,3 @@
-
 # Reseaux d interaction
 
 Nous allons analyser un réseau de collaboration scientifique en informatique.  Le réseau est extrait de DBLP et disponible sur SNAP.
@@ -55,10 +54,12 @@ $`C_{aléatoire} <=> p = \frac{⟨k⟩}{N} <=> \frac{6.62208890914917}{317080} \
 2. si le degré moyen du graphe aléatoire `Toolkit.averageDegree(graph)` est supérieur au logarithme  du nombre de nœuds `Math.log(graph.getNodeCount()`, alors le graphe a de fortes chances d'être connexe. En d'autres termes, un nombre de connexions suffisamment élevé entre les nœuds, représenté par un degré moyen plus grand, favorise la connectivité du graphe.
    dans notre cas pour un réseau aléatoire de même taille et de même degré moyen on a  :
 
-|degré moyen| 6.62208890914917 |
+|degré moyen| ln(nbNœuds) |
 |--|--|
-| **ln(nbNœuds)** | **12.666909386951092** |
+| **6.62208890914917** | **12.666909386951092** |
+
 d'apres ce tableau on peut deduire que le graphe aléatoire de même taille et de même degré moyen n'est pas connexe.
+
 3. Pour garantir la connectivité de ce graphe, il est nécessaire d'avoir un degré moyen d'au moins 12,66.
 
 
