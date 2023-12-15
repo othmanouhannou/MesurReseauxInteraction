@@ -6,5 +6,5 @@ set logscale x 10
 set logscale y 10
 set xlabel "x"
 set ylabel "p(x)"
-plot"distribution.txt" with linesp lt 1
+plot"distribution.txt" title 'Distribution des degrés' with linesp lt 1
 

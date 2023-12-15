@@ -4,5 +4,6 @@ set encoding utf8
 set output "distribution.png"
 set xlabel "x"
 set ylabel "p(x)"
-plot"distribution.txt" with linesp lt 1
+set title "Distribution des degrés"
+plot"distribution.txt" title 'Distribution des degrés' with linesp lt 1
 
