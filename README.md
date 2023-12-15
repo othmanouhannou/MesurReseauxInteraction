@@ -89,6 +89,8 @@ pour cela nos allons utiliser la fonction suivante :
 Cette fonction `generateDegreeDistribution` prend un graphe en entrée, calcule la distribution des degrés des nœuds de ce graphe en utilisant la fonction `Toolkit.degreeDistribution(graph)`, puis enregistre cette distribution dans un fichier texte appelé `"distribution.txt".` Chaque ligne du fichier contient un degré de nœud et la probabilité normalisée associée à ce degré dans le graphe.
 
 - *échelle linéaire* :
+![image](https://www-apps.univ-lehavre.fr/forge/oo233373/reseaux-d-interaction/-/blob/main/src/data/distribution.png)
+ 
  
 
  
