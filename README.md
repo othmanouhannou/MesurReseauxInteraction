@@ -89,9 +89,36 @@ pour cela nos allons utiliser la fonction suivante :
 Cette fonction `generateDegreeDistribution` prend un graphe en entrée, calcule la distribution des degrés des nœuds de ce graphe en utilisant la fonction `Toolkit.degreeDistribution(graph)`, puis enregistre cette distribution dans un fichier texte appelé `"distribution.txt".` Chaque ligne du fichier contient un degré de nœud et la probabilité normalisée associée à ce degré dans le graphe.
 
 - *échelle linéaire* :
+
 ![image](src/data/distribution.png)
+
+ ***- échelle log-log :***
+
+![image](src/data/distlog.png)
+
+ **- Est-ce qu'on observe une ligne droite en log-log ? Que cela nous indique ?**
+
+En représentant graphiquement la distribution des degrés sur une échelle logarithmique-logarithmique, on constate l'émergence d'une ligne droite sur plusieurs décades. Ce phénomène suggère la présence d'une loi de puissance de la forme $`P_k = C \cdot k^{-\gamma}`$, où $`P_k`$ est la probabilité d'un degré $`k`$ donné, $`C`$ est une constante, et $`\gamma`$ est l'exposant de la loi de puissance.
+
+ - ***distribution de Poisson :***
+	 
+![image](src/data/puissance.png)
+- **Coefficients de la loi de puissance**
  
- 
+ 	gamma = 2.70539  et  +/- 0.04437      (1.64%)
+
+ - **Est-ce qu'il s'agit d'un réseau petit monde ?**
+
+pour verifier qu'il s'agit d'un reseau petit monde , Il faut que $`d_{max}`$ soit égale à la distance moyenne obtenue précédemment.
+ $`d_{max} = \frac{ln(N)}{ln(<k>)} = 6.700`$
+d'apres ce resultat on peut deduire qu'il s'agit d'un petit monde.
 
  
+  - **Quelle sera la distance moyenne dans un réseau aléatoire avec les
+   mêmes caractéristiques ?**
+
+-   nombre de nœuds : 317080
+-   degré moyen : 6.62208890914917
+
+ $`d_{max} = \frac{ln(N)}{ln(k)} = \frac{ln(317080)}{ln(6.62208890914917)} = 6.70061181886`$
 
