@@ -69,7 +69,7 @@ public class Main {
         System.out.println("ln(N)/ln(<k>) :" + petitMonde);
 
 
-        //*******************
+        //********************
 
     }
 
