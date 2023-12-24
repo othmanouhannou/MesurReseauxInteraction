@@ -122,3 +122,5 @@ d'apres ce resultat on peut deduire qu'il s'agit d'un petit monde.
 
  $`d_{max} = \frac{ln(N)}{ln(k)} = \frac{ln(317080)}{ln(6.62208890914917)} = 6.70061181886`$
 
+- La distribution des distances :
+- ![image](src/data/distributionDistance.png)

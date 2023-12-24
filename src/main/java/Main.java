@@ -68,7 +68,7 @@ public class Main {
         double petitMonde = (Math.log(graph.getNodeCount())/Math.log(Toolkit.averageDegree(graph)));
         System.out.println("ln(N)/ln(<k>) :" + petitMonde);
 
-
+        m.genererDistributionDistances();
         //********************
 
     }
