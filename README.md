@@ -107,6 +107,8 @@ En représentant graphiquement la distribution des degrés sur une échelle loga
  
  	gamma = 2.70539  et  +/- 0.04437      (1.64%)
 
+## 5. **la distance moyenne dans le réseau**
+
  - **Est-ce qu'il s'agit d'un réseau petit monde ?**
 
 pour verifier qu'il s'agit d'un reseau petit monde , Il faut que $`d_{max}`$ soit égale à la distance moyenne obtenue précédemment.
