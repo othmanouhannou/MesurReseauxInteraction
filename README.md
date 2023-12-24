@@ -124,3 +124,5 @@ d'apres ce resultat on peut deduire qu'il s'agit d'un petit monde.
 
 - La distribution des distances :
 - ![image](src/data/distributionDistance.png)
+
+D'après le graphe précédent, on peut déduire que la distribution des distances suit une loi binomiale.
