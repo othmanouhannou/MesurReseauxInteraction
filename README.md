@@ -128,3 +128,34 @@ d'apres ce resultat on peut deduire qu'il s'agit d'un petit monde.
 - ![image](src/data/distributionDistance.png)
 
 D'après le graphe précédent, on peut déduire que la distribution des distances suit une loi binomiale.
+
+**
+
+## 6. Graphe aleatoire et graphe de Barabasi ##
+
+à l'aide des deux méthodes genererGrapheAleatoire(int nombreNoeuds, int degreMoyen) et  genererGrapheBarabasi(int nombreNoeuds, int degreMoyen)
+nous allons pouvoir créer les deux graphes afin de comparer entre eux :
+
+- **Graphe aléatoire :**
+- Nombre de nœuds dans le graphe aléatoire : 100008 
+- Nombre d'arêtes dans le graphe aléatoire : 349654
+- Degré moyen dans le graphe aléatoire : 6.992521
+- Coefficient moyen de regroupement dans le graphe aléatoire : 1.1903604275617001E-4
+- Le graphe est connexe : false
+- Degré moyen pour un graphe connexe de même taille : 11.5130054617704
+
+
+- **Graphe de Barabasi :**
+
+- Nombre de nœuds dans le graphe Barabasi : 100002
+- Nombre d'arêtes dans le graphe Barabasi : 398995
+- Degré moyen dans le graphe Barabasi : 7.979741
+- Coefficient moyen de regroupement dans le graphe Barabasi : 0.0011614788009815422
+- Le graphe est connexe : true
+- Degré moyen pour un graphe connexe de même taille : 11.512945464770231
+
+
+D'après ces résultats, on remarque que le coefficient moyen de regroupement dans 
+le graphe de Barabasi est plus élevé par rapport à celui du graphe aléatoire. 
+La connexité du graphe de Barabasi suggère une structure plus intégrée,
+tandis que le graphe aléatoire peut contenir des composants isolés.ire peut contenir des composants isolés. 
