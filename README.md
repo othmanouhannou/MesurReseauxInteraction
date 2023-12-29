@@ -132,11 +132,11 @@ D'après le graphe précédent, on peut déduire que la distribution des distanc
 **
 
 ## 6. Graphe aleatoire et graphe de Barabasi ##
-à l'aide des deux méthodes `genererGrapheAleatoire(int nombreNoeuds, int degreMoyen)` et  `genererGrapheBarabasi(int nombreNoeuds, int degreMoyen)`
+
+à l'aide des deux méthodes genererGrapheAleatoire(int nombreNoeuds, int degreMoyen) et  genererGrapheBarabasi(int nombreNoeuds, int degreMoyen)
 nous allons pouvoir créer les deux graphes afin de comparer entre eux :
 
- 
- **Graphe aléatoire :**
+- **Graphe aléatoire :**
 - Nombre de nœuds dans le graphe aléatoire : 100008 
 - Nombre d'arêtes dans le graphe aléatoire : 349654
 - Degré moyen dans le graphe aléatoire : 6.992521
@@ -144,7 +144,8 @@ nous allons pouvoir créer les deux graphes afin de comparer entre eux :
 - Le graphe est connexe : false
 - Degré moyen pour un graphe connexe de même taille : 11.5130054617704
 
-**Graphe de Barabasi :**
+
+- **Graphe de Barabasi :**
 
 - Nombre de nœuds dans le graphe Barabasi : 100002
 - Nombre d'arêtes dans le graphe Barabasi : 398995
@@ -153,7 +154,43 @@ nous allons pouvoir créer les deux graphes afin de comparer entre eux :
 - Le graphe est connexe : true
 - Degré moyen pour un graphe connexe de même taille : 11.512945464770231
 
+
 D'après ces résultats, on remarque que le coefficient moyen de regroupement dans 
 le graphe de Barabasi est plus élevé par rapport à celui du graphe aléatoire. 
 La connexité du graphe de Barabasi suggère une structure plus intégrée,
-tandis que le graphe aléatoire peut contenir des composants isolés.ire peut contenir des composants isolés.
+tandis que le graphe aléatoire peut contenir des composants isolés.ire peut contenir des composants isolés. 
+
+
+**
+
+## TP-2 Propagation dans des réseaux
+
+**
+
+1. 1 )
+
+le seuil épidémique dans un réseau peut être estimé à l'aide du seuil épidémique de base (λ​), qui représente le nombre moyen d'infections résultant d'un individu infecté introduit dans une population totalement susceptible. Pour un réseau aléatoire, λ​ est lié au degré moyen (k) par la formule λ=β/γ, où β est le taux de contact et γ est le taux de guérison.
+
+Taux de contact (β): Comme chaque individu envoie un e-mail par semaine à chaque collaborateur, le nombre moyen de contacts par jour c peut être défini comme c=1/7.
+
+Taux de guérison (γ): Comme chaque individu met à jour son antivirus tous les deux semaines, le taux de guérison (γ) peut être défini comme 1/14.
+
+Maintenant, le seuil épidémique de base (λ​) peut être calculé comme λ​=β/γ. Substituant les valeurs, nous avons:
+
+λ= $\frac {1/7}{1/14}$ = 2 .
+
+1.2)
+
+Le seuil épidémique du réseau (λc​) est déterminé par la relation λc​=$\frac {k}{k^2}$​, où k est le degré moyen et $k^2$ est la dispersion des degrés dans le réseau.
+
+1.3) a l'aide de la methode  `Toolkit.degreeDistribution()` qui retourn un tableau de Int nous allons cree une methode `dispersionDegre()` qui utilise la formule suivante pour calculer la dispersion des degrés    $K^2 = \sum(i^2 * \frac{nombre de nœuds avec degreˊ i}{NombreTotaleDeNoeuds})$.
+
+- degre moyen dblp : 6.62208890914917
+- degre moyen du graphe aleatoire: 6.672928810119629
+- dispersion des degrés du graphealeatoire:63.02328370140902
+- dispersion des degrés du graphe dblp : 144.00627601867035
+- λc du graphe aleatoire : 0.10588037338286836
+- λc du graphe dblp : 0.045984724362225844
+
+
+Il est clair que le seuil épidémique dans un réseau de degré moyen similaire est plus élevé dans le cas d'un réseau aléatoire.
