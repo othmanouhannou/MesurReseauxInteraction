@@ -1,3 +1,5 @@
+package tp1;
+
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.algorithm.generator.BarabasiAlbertGenerator;
 import org.graphstream.algorithm.generator.Generator;
@@ -59,7 +61,7 @@ public class Mesur {
             e.printStackTrace();
         }
     }
-    public Graph genererGrapheAleatoire(int nombreNoeuds, int degreMoyen) {
+    public Graph genererGrapheAleatoire(int nombreNoeuds, double degreMoyen) {
         Graph grapheAleatoire = new SingleGraph("GrapheAleatoire");
         Generator generateur = new RandomGenerator(degreMoyen, false, false);
         generateur.addSink(grapheAleatoire);
@@ -71,12 +73,12 @@ public class Mesur {
 
         generateur.end();
 
-        System.out.printf("Nombre de nœuds dans le graphe aléatoire : %d%n", grapheAleatoire.getNodeCount());
-        System.out.printf("Nombre d'arêtes dans le graphe aléatoire : %d%n", grapheAleatoire.getEdgeCount());
-        System.out.printf("Degré moyen dans le graphe aléatoire : %f%n", Toolkit.averageDegree(grapheAleatoire));
-        System.out.println("Coefficient moyen de regroupement dans le graphe aléatoire : " + Toolkit.averageClusteringCoefficient(grapheAleatoire));
-        System.out.println("Le graphe est connexe : " + Toolkit.isConnected(grapheAleatoire));
-        System.out.println("Degré moyen pour un graphe connexe de même taille : " + Math.log(grapheAleatoire.getNodeCount()));
+//        System.out.printf("Nombre de nœuds dans le graphe aléatoire : %d%n", grapheAleatoire.getNodeCount());
+//        System.out.printf("Nombre d'arêtes dans le graphe aléatoire : %d%n", grapheAleatoire.getEdgeCount());
+//        System.out.printf("Degré moyen dans le graphe aléatoire : %f%n", Toolkit.averageDegree(grapheAleatoire));
+//        System.out.println("Coefficient moyen de regroupement dans le graphe aléatoire : " + Toolkit.averageClusteringCoefficient(grapheAleatoire));
+//        System.out.println("Le graphe est connexe : " + Toolkit.isConnected(grapheAleatoire));
+//        System.out.println("Degré moyen pour un graphe connexe de même taille : " + Math.log(grapheAleatoire.getNodeCount()));
 
         return grapheAleatoire;
     }

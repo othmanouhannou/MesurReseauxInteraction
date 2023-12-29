@@ -1,3 +1,5 @@
+package tp1;
+
 import org.graphstream.algorithm.Toolkit;
 import org.graphstream.graph.BreadthFirstIterator;
 import org.graphstream.graph.Graph;
@@ -40,7 +42,7 @@ public class Main {
 //        System.out.println("connected graph : " + connexe);
 //        //un graph aleatoire peut etre connece ssi le degres moyen est supperieur au ln(nb neuds)
 //        System.out.println(Math.log(graph.getNodeCount()) + " > " + Toolkit.averageDegree(graph));
-//        Mesur m = new Mesur(graph);
+//        tp1.Mesur m = new tp1.Mesur(graph);
 //        m.generateDegreeDistribution();
 //
 //
