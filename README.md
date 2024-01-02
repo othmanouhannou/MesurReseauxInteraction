@@ -211,3 +211,16 @@ Il est clair que le seuil épidémique dans un réseau de degré moyen similaire
   ![sc3](src/scenarios/sc3.png)
   En fin, dans le 3eme scénario, nous avons mis en place une simulation visant à persuader 50 % de la population de convaincre un de leur collaborateurs de mettre régulièrement à jour leur programme, avec une fréquence de deux fois par mois, soit tous les 14 jours en utilisant la fonction `immuniserSelective()` .
   on remarque dans ce scénario que le nombre des infections reste à peu près nulle.
+
+**3. calculez le degré moyen des groupes 0 et 1**
+
+- scénario 2
+
+  degre moyen grp1 (_immunisée_) : 3.2984861864513686  
+  degre moyen grp2 : 3.328674151633657
+
+- scénario 3
+
+  degre moyen grp1 (_immunisée_) : 5.660350700138766  
+  degre moyen grp2  : 1.2621420461713133
+ 

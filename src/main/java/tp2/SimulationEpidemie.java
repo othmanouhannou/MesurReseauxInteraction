@@ -6,10 +6,9 @@ import org.graphstream.graph.Node;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Stream;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 public class SimulationEpidemie {
@@ -81,7 +80,31 @@ public class SimulationEpidemie {
         // Initialisation du patient0 (premier patient infecté) qui n'est pas immunisé
 
         immuniserAleatoire();
+        AtomicReference<Double> degreMoyengrp1 = new AtomicReference<>(0.0);
+        AtomicReference<Double> degreMoyengrp2 = new AtomicReference<>(0.0);
 
+        for (Node node : graph) {
+            if (node.hasAttribute("immunized")) {
+                //parcourir les voisins
+                node.neighborNodes().forEach(neighbor -> {
+                    if (neighbor.hasAttribute("immunized")) {
+                        degreMoyengrp1.updateAndGet(v -> v + 1);
+
+                    }
+                });
+            } else {
+                node.neighborNodes().forEach(neighbor -> {
+                    if (!neighbor.hasAttribute("immunized")) {
+                        degreMoyengrp2.updateAndGet(v -> v + 1);
+                    }
+                });
+            }
+        }
+        int t = graph.getNodeCount()/2;
+        degreMoyengrp1.updateAndGet(v -> v / t);
+        degreMoyengrp2.updateAndGet(v -> v / t);
+        System.out.println("degre moyen grp1 : " + degreMoyengrp1);
+        System.out.println("degre moyen grp2 : " + degreMoyengrp2);
         Node patient0 = Toolkit.randomNode(graph);
         patient0.setAttribute("health", "infected");
         patient0.removeAttribute("immunized");
@@ -137,15 +160,15 @@ public class SimulationEpidemie {
         List<Node> immunisation = Toolkit.randomNodeSet(graph, graph.getNodeCount() / 2);
         AtomicInteger immunizedCount = new AtomicInteger(0);
 
+
         // Immunize the selected nodes
         immunisation.forEach(node -> {
                  node.setAttribute("health", "immune");
                 node.setAttribute("immunized", true);
+
                 immunizedCount.incrementAndGet();
-
-
-
         });
+
 
         // Display the number of immunized nodes (including neighbors)
         System.out.println("Immunized: " + immunizedCount.get());
@@ -155,6 +178,32 @@ public class SimulationEpidemie {
         int jours = 90;
         long[] infections = new long[jours + 1];
         immuniserSelective();
+
+        AtomicReference<Double> degreMoyengrp1 = new AtomicReference<>(0.0);
+        AtomicReference<Double> degreMoyengrp2 = new AtomicReference<>(0.0);
+
+        for (Node node : graph) {
+            if (node.hasAttribute("immunized")) {
+               //parcourir les voisins
+                 node.neighborNodes().forEach(neighbor -> {
+                    if (neighbor.hasAttribute("immunized")) {
+                        degreMoyengrp1.updateAndGet(v -> v + 1);
+
+                    }
+                 });
+            } else {
+                 node.neighborNodes().forEach(neighbor -> {
+                    if (!neighbor.hasAttribute("immunized")) {
+                         degreMoyengrp2.updateAndGet(v -> v + 1);
+                     }
+                });
+            }
+        }
+        int t = graph.getNodeCount()/2;
+        degreMoyengrp1.updateAndGet(v -> v / t);
+        degreMoyengrp2.updateAndGet(v -> v / t);
+        System.out.println("degre moyen grp1 : " + degreMoyengrp1);
+        System.out.println("degre moyen grp2 : " + degreMoyengrp2);
         // Initialisation du patient0 (premier patient infecté)
         Node patient0 = Toolkit.randomNode(graph);
         patient0.setAttribute("health", "infected");
@@ -231,6 +280,8 @@ public class SimulationEpidemie {
                 }
             }
         });
+
+
 
         // Display the number of immunized nodes (including neighbors)
         System.out.println("Immunized: " + immunizedCount.get());
