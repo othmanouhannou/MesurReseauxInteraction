@@ -210,4 +210,4 @@ Il est clair que le seuil épidémique dans un réseau de degré moyen similaire
 - scénario 3 :
   ![sc3](src/scenarios/sc3.png)
   En fin, dans le 3eme scénario, nous avons mis en place une simulation visant à persuader 50 % de la population de convaincre un de leur collaborateurs de mettre régulièrement à jour leur programme, avec une fréquence de deux fois par mois, soit tous les 14 jours en utilisant la fonction `immuniserSelective()` .
-  on remarque dans ce scénario que le nombre des infections reste à peu près nulle
+  on remarque dans ce scénario que le nombre des infections reste à peu près nulle.
