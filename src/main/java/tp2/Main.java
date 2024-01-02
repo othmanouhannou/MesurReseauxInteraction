@@ -26,25 +26,26 @@ public class Main {
         } finally {
             fs.removeSink(graph);
         }
+//
+//        System.out.println("degre moyen dblp : " + Toolkit.averageDegree(graph));
+//
+//        sg = new SingleGraph("sg");
+//        Mesur m = new Mesur(sg);
+//        Graph graphAleatoire = m.genererGrapheAleatoire(10000, 6.62208890914917);
+//
+//        System.out.println("degre moyen du graphe aleatoire: " + Toolkit.averageDegree(graphAleatoire));
+//
+//        Propagation p = new Propagation(graphAleatoire);
+//        Propagation p1 = new Propagation(graph);
+//        System.out.println("dispersion des degrés du graphe aleatoire : " + p.dispersionDegre());
+//        System.out.println("dispersion des degrés du graphe dblp : " + p1.dispersionDegre());
+//
+//        System.out.println("λc du graphe aleatoire : " + Toolkit.averageDegree(graphAleatoire)/p.dispersionDegre());
+//        System.out.println("λc du graphe dblp : " + Toolkit.averageDegree(graph)/p1.dispersionDegre());
 
-        System.out.println("degre moyen dblp : " + Toolkit.averageDegree(graph));
-
-        sg = new SingleGraph("sg");
-        Mesur m = new Mesur(sg);
-        Graph graphAleatoire = m.genererGrapheAleatoire(10000, 6.62208890914917);
-
-        System.out.println("degre moyen du graphe aleatoire: " + Toolkit.averageDegree(graphAleatoire));
-
-        Propagation p = new Propagation(graphAleatoire);
-        Propagation p1 = new Propagation(graph);
-        System.out.println("dispersion des degrés du graphe aleatoire : " + p.dispersionDegre());
-        System.out.println("dispersion des degrés du graphe dblp : " + p1.dispersionDegre());
-
-        System.out.println("λc du graphe aleatoire : " + Toolkit.averageDegree(graphAleatoire)/p.dispersionDegre());
-        System.out.println("λc du graphe dblp : " + Toolkit.averageDegree(graph)/p1.dispersionDegre());
-
-
-
-
-    }
+        SimulationEpidemie se = new SimulationEpidemie(graph);
+       // se.scinario1();
+       // se.scenario2();
+        se.scinario3();
+     }
 }

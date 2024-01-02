@@ -167,7 +167,7 @@ tandis que le graphe aléatoire peut contenir des composants isolés.ire peut co
 
 **
 
-1. 1 )
+### 1. 1 )
 
 le seuil épidémique dans un réseau peut être estimé à l'aide du seuil épidémique de base (λ​), qui représente le nombre moyen d'infections résultant d'un individu infecté introduit dans une population totalement susceptible. Pour un réseau aléatoire, λ​ est lié au degré moyen (k) par la formule λ=β/γ, où β est le taux de contact et γ est le taux de guérison.
 
@@ -194,3 +194,20 @@ Le seuil épidémique du réseau (λc​) est déterminé par la relation λc​
 
 
 Il est clair que le seuil épidémique dans un réseau de degré moyen similaire est plus élevé dans le cas d'un réseau aléatoire.
+
+### 2.Simulez la propagation du virus
+
+- scénario 1 :
+  ![s1](src/scenarios/sc1.png)
+  on remarque dans le premier scénario que le nombre des infectés atteint c'est maximum vu  qu'on ne fait rien pour arrêter la propagation du virus dans le reseau.
+  pour ce faire , nous avons cree la foctions `scenario1()` .
+  cette fonction simule la propagation d'un virus dans un réseau au cours de 90 jours. La simulation débute avec un patient initial infecté. Chaque jour, le virus est transmis aux voisins infectés avec une probabilité de 1/7. Les nouveaux individus infectés sont ajoutés à la liste des malades.
+  Le nombre total d'infections est mis à jour chaque jour, et les résultats sont affichés, notamment le nombre de nouveaux infectés et le total d'infectés pour chaque jour. Enfin, les résultats sont sauvegardés dans un fichier texte ("src/scenarios/sc1.txt") pour une analyse ultérieure.
+- scénario 2 :
+  ![sc2](src/scenarios/sc2.png)
+  Dans le deuxième scénario, nous avons mis en place une simulation visant à persuader 50 % de la population de mettre régulièrement à jour leur programme, avec une fréquence de deux fois par mois, soit tous les 14 jours en utilisant la fonction `immuniserAleatoire()`
+
+- scénario 3 :
+  ![sc3](src/scenarios/sc3.png)
+  En fin, dans le 3eme scénario, nous avons mis en place une simulation visant à persuader 50 % de la population de convaincre un de leur collaborateurs de mettre régulièrement à jour leur programme, avec une fréquence de deux fois par mois, soit tous les 14 jours en utilisant la fonction `immuniserSelective()` .
+  on remarque dans ce scénario que le nombre des infections reste à peu près nulle
