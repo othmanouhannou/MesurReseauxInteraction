@@ -46,6 +46,6 @@ public class Main {
         SimulationEpidemie se = new SimulationEpidemie(graph);
        // se.scinario1();
         //se.scenario2();
-        se.scinario3();
+       se.scinario3();
      }
 }

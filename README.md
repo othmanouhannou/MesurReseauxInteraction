@@ -223,4 +223,13 @@ Il est clair que le seuil épidémique dans un réseau de degré moyen similaire
 
   degre moyen grp1 (_immunisée_) : 5.660350700138766  
   degre moyen grp2  : 1.2621420461713133
- 
+
+**4. le seuil épidémique des différents scénarios**
+
+- le seuil épidémique du réseau modifié  stratégie d'immunisation du
+  2eme scenario est : `0.08867857472483566`
+
+- le seuil épidémique du réseau modifié  stratégies d'immunisation du
+  3eme scenario est : `0.05352840680707011`
+
+Finalement, on peut remarquer que les seuils d'épidémie des deux scénarios sont bien supérieurs au seuil du réseau initial.

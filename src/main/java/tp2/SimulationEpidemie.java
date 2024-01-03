@@ -80,6 +80,7 @@ public class SimulationEpidemie {
         // Initialisation du patient0 (premier patient infecté) qui n'est pas immunisé
 
         immuniserAleatoire();
+
         AtomicReference<Double> degreMoyengrp1 = new AtomicReference<>(0.0);
         AtomicReference<Double> degreMoyengrp2 = new AtomicReference<>(0.0);
 
@@ -105,11 +106,23 @@ public class SimulationEpidemie {
         degreMoyengrp2.updateAndGet(v -> v / t);
         System.out.println("degre moyen grp1 : " + degreMoyengrp1);
         System.out.println("degre moyen grp2 : " + degreMoyengrp2);
+
+        Graph senario2 = graph;
+        Propagation p = new Propagation(senario2);
+        List<Node> immunisation = Toolkit.randomNodeSet(graph, graph.getNodeCount());
+        //suprimer les noeuds immuniser du graphe senario2
+        for (Node node : immunisation) {
+            if (node.hasAttribute("immunized")) {
+                senario2.removeNode(node);
+            }
+        }
+        System.out.println("seill de la pidemie : " + Toolkit.averageDegree(senario2)/p.dispersionDegre());
         Node patient0 = Toolkit.randomNode(graph);
         patient0.setAttribute("health", "infected");
         patient0.removeAttribute("immunized");
 
-        // Simulation de la propagation pendant 90 jours
+        //afficher le seill de la pidemie
+         // Simulation de la propagation pendant 90 jours
         for (int jour = 1; jour <= jours; jour++) {
             ArrayList<Node> malades = new ArrayList<>();
 
@@ -125,10 +138,7 @@ public class SimulationEpidemie {
                 }
             });
 
-            // Immunisation aléatoire des individus tous les 15 jours
-//            if (jour % 15 == 0) {
-//                immuniserAleatoire();
-//            }
+
 
             // Mise à jour du nombre d'infections pour ce jour
             //ajouter que les infecter a une liste
@@ -204,6 +214,17 @@ public class SimulationEpidemie {
         degreMoyengrp2.updateAndGet(v -> v / t);
         System.out.println("degre moyen grp1 : " + degreMoyengrp1);
         System.out.println("degre moyen grp2 : " + degreMoyengrp2);
+
+        Graph senario3 = graph;
+        Propagation p = new Propagation(senario3);
+        List<Node> immunisation = Toolkit.randomNodeSet(graph, graph.getNodeCount());
+        //suprimer les noeuds immuniser du graphe senario2
+        for (Node node : immunisation) {
+            if (!node.hasAttribute("immunized")) {
+                senario3.removeNode(node);
+            }
+        }
+         System.out.println("seill de la pidemie : " + Toolkit.averageDegree(senario3)/p.dispersionDegre());
         // Initialisation du patient0 (premier patient infecté)
         Node patient0 = Toolkit.randomNode(graph);
         patient0.setAttribute("health", "infected");
