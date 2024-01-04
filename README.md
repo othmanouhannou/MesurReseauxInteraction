@@ -177,13 +177,13 @@ Taux de guérison (γ): Comme chaque individu met à jour son antivirus tous les
 
 Maintenant, le seuil épidémique de base (λ​) peut être calculé comme λ​=β/γ. Substituant les valeurs, nous avons:
 
-λ= $\frac {1/7}{1/14}$ = 2 .
+λ= $`\frac {1/7}{1/14}`$ = 2 .
 
 1.2)
 
-Le seuil épidémique du réseau (λc​) est déterminé par la relation λc​=$\frac {k}{k^2}$​, où k est le degré moyen et $k^2$ est la dispersion des degrés dans le réseau.
+Le seuil épidémique du réseau (λc​) est déterminé par la relation λc​=$`\frac {k}{k^2}`$​, où k est le degré moyen et $`k^2`$ est la dispersion des degrés dans le réseau.
 
-1.3) a l'aide de la methode  `Toolkit.degreeDistribution()` qui retourn un tableau de Int nous allons cree une methode `dispersionDegre()` qui utilise la formule suivante pour calculer la dispersion des degrés    $K^2 = \sum(i^2 * \frac{nombre de nœuds avec degreˊ i}{NombreTotaleDeNoeuds})$.
+1.3) a l'aide de la methode  `Toolkit.degreeDistribution()` qui retourn un tableau de Int nous allons cree une methode `dispersionDegre()` qui utilise la formule suivante pour calculer la dispersion des degrés    $`K^2 = \sum(i^2 * \frac{nombre de nœuds avec degreˊ i}{NombreTotaleDeNoeuds})`$.
 
 - degre moyen dblp : 6.62208890914917
 - degre moyen du graphe aleatoire: 6.672928810119629
