@@ -233,3 +233,12 @@ Il est clair que le seuil épidémique dans un réseau de degré moyen similaire
   3eme scenario est : `0.05352840680707011`
 
 Finalement, on peut remarquer que les seuils d'épidémie des deux scénarios sont bien supérieurs au seuil du réseau initial.
+
+**5. simulation de la propagation de virus dans un réseau generer aléatoirement et un réseau de Barabasi :**
+
+-     réseau aléatoire : 
+![img](src/scenarios/RandComp.png)
+-     réseau de Barabasi : 
+![img](src/scenarios/scBarabasi.png)
+
+d'après ces deux représentations graphiques on peut constater que le virus se propage de la même manière dans les différents réseaux et que la stratégie utilisée dans le 3e scénario est toujours efficace.

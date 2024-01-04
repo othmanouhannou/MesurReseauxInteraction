@@ -29,8 +29,8 @@ public class Main {
 //
 //        System.out.println("degre moyen dblp : " + Toolkit.averageDegree(graph));
 //
-//        sg = new SingleGraph("sg");
-//        Mesur m = new Mesur(sg);
+        sg = new SingleGraph("sg");
+        Mesur m = new Mesur(sg);
 //        Graph graphAleatoire = m.genererGrapheAleatoire(10000, 6.62208890914917);
 //
 //        System.out.println("degre moyen du graphe aleatoire: " + Toolkit.averageDegree(graphAleatoire));
@@ -42,10 +42,23 @@ public class Main {
 //
 //        System.out.println("λc du graphe aleatoire : " + Toolkit.averageDegree(graphAleatoire)/p.dispersionDegre());
 //        System.out.println("λc du graphe dblp : " + Toolkit.averageDegree(graph)/p1.dispersionDegre());
-
-        SimulationEpidemie se = new SimulationEpidemie(graph);
+//cree un graphe aleatoire
+       // Graph graphAleatoire = m.genererGrapheAleatoire(317080, 6.62208890914917);
+        //SimulationEpidemie se = new SimulationEpidemie(graph);
+       // SimulationEpidemie seRandom = new SimulationEpidemie(graphAleatoire);
        // se.scinario1();
         //se.scenario2();
-       se.scinario3();
+       //se.scinario3();
+
+       // seRandom.scinario1("src/scenarios/sc1Rand.txt");
+        //seRandom.scenario2("src/scenarios/sc2Rand.txt");
+       // seRandom.scinario3("src/scenarios/sc3Rand.txt");
+
+        Graph graphBarabasi = m.genererGrapheBarabasi(10000, (int)6.62208890914917);
+        SimulationEpidemie seBarabasi = new SimulationEpidemie(graphBarabasi);
+        //seBarabasi.scinario1("src/scenarios/sc1Barabasi.txt");
+        //seBarabasi.scenario2("src/scenarios/sc2Barabasi.txt");
+        seBarabasi.scinario3("src/scenarios/sc3Barabasi.txt");
+
      }
 }

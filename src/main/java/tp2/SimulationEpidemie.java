@@ -17,7 +17,7 @@ public class SimulationEpidemie {
         this.graph=graph;
     }
 
-    public void scinario1() {
+    public void scinario1(String textFile) {
         int jours = 90;
         long[] infections = new long[jours + 1];
 
@@ -63,7 +63,7 @@ public class SimulationEpidemie {
 
 
         // Sauvegarde des résultats dans un fichier
-        try (PrintWriter fichier = new PrintWriter(new FileWriter("src/scenarios/sc1.txt"))) {
+        try (PrintWriter fichier = new PrintWriter(new FileWriter(textFile))) {
             for (int i = 0; i <= jours; i++) {
                 fichier.println(i + "   " + infections[i]);
             }
@@ -73,7 +73,7 @@ public class SimulationEpidemie {
     }
 
 
-    public void scenario2() {
+    public void scenario2(String textFile) {
         int jours = 90;
         long[] infections = new long[jours + 1];
 
@@ -157,7 +157,7 @@ public class SimulationEpidemie {
         }
 
         // Sauvegarde des résultats dans un fichier
-        try (PrintWriter fichier = new PrintWriter(new FileWriter("src/scenarios/sc2.txt"))) {
+        try (PrintWriter fichier = new PrintWriter(new FileWriter(  textFile))) {
             for (int i = 0; i <= jours; i++) {
                 fichier.println(i + "   " + infections[i]);
             }
@@ -184,7 +184,7 @@ public class SimulationEpidemie {
         System.out.println("Immunized: " + immunizedCount.get());
     }
 
-    public void scinario3() {
+    public void scinario3(String textFile) {
         int jours = 90;
         long[] infections = new long[jours + 1];
         immuniserSelective();
@@ -268,7 +268,7 @@ public class SimulationEpidemie {
         }
 
         // Sauvegarde des résultats dans un fichier
-        try (PrintWriter fichier = new PrintWriter(new FileWriter("src/scenarios/sc3.txt"))) {
+        try (PrintWriter fichier = new PrintWriter(new FileWriter(  textFile))) {
             for (int i = 0; i <= jours; i++) {
                 fichier.println(i + "   " + infections[i]);
             }
@@ -307,4 +307,9 @@ public class SimulationEpidemie {
         // Display the number of immunized nodes (including neighbors)
         System.out.println("Immunized: " + immunizedCount.get());
     }
+
+
+
+
+
 }
